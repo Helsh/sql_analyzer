@@ -8,3 +8,7 @@ create view authors_titles_slugs as select authors.name, articles.title, article
 2)
 # Extract name from path so it could be matched with articles slug
 create view extracted_paths as select split_part(path, '/', 3) as extracted_name, count(path) as views from log where status = '200 OK' and path != '/' group by path order by views desc;
+
+<!-- 3)
+# Create summary view for failures (count of fails and dates)
+create view failures_summary as select date(time), count(status) from log where status != '200 OK' group by time; -->
