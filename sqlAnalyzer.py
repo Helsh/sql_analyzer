@@ -21,7 +21,7 @@ class SQLAnalyzer:
     def reportFailedRequests(self):
         db_connection = psycopg2.connect(DB_CONNECTION_NAME)
         cursor = db_connection.cursor()
-        cursor.execute("")
+        cursor.execute("select date, round(percentage,2) from failure_percentage where failure_percentage.percentage > 1.0")
         results = cursor.fetchall()
         print(results)
         db_connection.close()
