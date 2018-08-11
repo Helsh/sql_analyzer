@@ -2,11 +2,9 @@
 # Please follow steps below to reproduce database environment required to run properly this application
 
 1)
-# Create view for paths and views
-# This sql is extracting part of article name from its path
-create view articles_paths as select split_part(path, '/', 3), count(path) as views from log where status = '200 OK' and path != '/' group by path order by views desc limit 3;
+# Authors + titles
+create view authors_titles_slugs as select authors.name, articles.title, articles.slug from authors join articles on authors.id = articles.author;
 
 2)
-# Create view with splited names and views
-# This sql is replacing "-" with spaces so we could match it with article name
-create view top_articles as select replace(split_part, '-', ' ') as short_name, views from articles_paths;
+# Extract name from path so it could be matched with articles slug
+create view extracted_paths as select split_part(path, '/', 3) as extracted_name, count(path) as views from log where status = '200 OK' and path != '/' group by path order by views desc;
