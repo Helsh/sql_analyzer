@@ -1,5 +1,5 @@
 # About project
-SQL Analyzer is application written in Python 3 for purpose of analyzing data from database "news" and print output for end users.
+SQL Analyzer is application written in Python 3 for purpose of analyzing data from database "news" and printing output for end users.
 
 # INSTRUCTION FOR CREATING VIEWS
 # Please follow steps below to reproduce database environment required to run properly this application
@@ -30,9 +30,9 @@ create view all_requests as select date(log.time) as datetime, count(log.status)
 
  # HOW TO RUN
 Requirements:
-- Python 3.6.5
-- psycopg2 connector (it can be installed e.g. via pip3 install)
-- database "news" stored in PostgreSQL - [Download](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+* Python 3.6.5
+* psycopg2 connector (it can be installed e.g. via pip3 install)
+* database "news" stored in PostgreSQL - [Download](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
 Run main.py file (e.g. python3 main.py or ./main.py on Unix).
 
