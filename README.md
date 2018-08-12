@@ -24,3 +24,8 @@ create view all_requests as select date(log.time) as datetime, count(log.status)
 # 6)
 # Percentage of failed requests
  create view failure_percentage as select date, (100.0*(sum(counted_failed_requests.count)/sum(all_requests.counted))) as percentage from counted_failed_requests join all_requests on counted_failed_requests.date = all_requests.datetime group by date order by percentage;
+
+ # HOW TO RUN
+ Run main.py file (e.g. python3 main.py).
+
+
