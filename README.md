@@ -26,6 +26,17 @@ create view all_requests as select date(log.time) as datetime, count(log.status)
  create view failure_percentage as select date, (100.0*(sum(counted_failed_requests.count)/sum(all_requests.counted))) as percentage from counted_failed_requests join all_requests on counted_failed_requests.date = all_requests.datetime group by date order by percentage;
 
  # HOW TO RUN
- Run main.py file (e.g. python3 main.py).
+Requirements:
+- Python 3.6.5
+- psycopg2 connector (it can be installed e.g. via pip3 install)
+- database "news" stored in PostgreSQL
+
+Run main.py file (e.g. python3 main.py).
+
+# Project structure
+* main.py - start python file, responsible for running application
+* sqlAnalyzer.py - python class, used for fetching data using SQL
+* outputPrinter.py - python class, provides printing of output data produced by sqlAnalyzer
+
 
 
