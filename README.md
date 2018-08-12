@@ -29,9 +29,9 @@ create view all_requests as select date(log.time) as datetime, count(log.status)
 Requirements:
 - Python 3.6.5
 - psycopg2 connector (it can be installed e.g. via pip3 install)
-- database "news" stored in PostgreSQL
+- database "news" stored in PostgreSQL - [Download](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
-Run main.py file (e.g. python3 main.py).
+Run main.py file (e.g. python3 main.py or ./main.py on Unix).
 
 # Project structure
 * main.py - start python file, responsible for running application
