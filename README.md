@@ -1,3 +1,6 @@
+# About project
+SQL Analyzer is application written in Python 3 for purpose of analyzing data from database "news" and print output for end users.
+
 # INSTRUCTION FOR CREATING VIEWS
 # Please follow steps below to reproduce database environment required to run properly this application
 
