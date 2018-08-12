@@ -37,6 +37,7 @@ Run main.py file (e.g. python3 main.py).
 * main.py - start python file, responsible for running application
 * sqlAnalyzer.py - python class, used for fetching data using SQL
 * outputPrinter.py - python class, provides printing of output data produced by sqlAnalyzer
+* sqlConnector.py - python class, connector to database, contain db operations from DB API
 
 
 
